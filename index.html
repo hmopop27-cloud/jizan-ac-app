@@ -7,393 +7,440 @@
 <title>جيزان الخدمة للمكيفات</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
-body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#eef7fb;
-    color:#122c45;
-    overflow-x:hidden;
+html{
+    scroll-behavior:smooth;
 }
 
-/* الصفحة */
+body{
+    font-family:Tahoma, Arial, sans-serif;
+    background:#086ed8;
+    color:#111;
+    text-align:center;
+}
+
+/* الحاوية الرئيسية */
 .page{
+    width:100%;
     max-width:720px;
     margin:auto;
-    background:#f5fafc;
-    min-height:100vh;
-    box-shadow:0 0 30px rgba(0,80,150,.12);
+    background:#f7f9fb;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(0,0,0,.15);
 }
 
-/* الهيدر */
+/* =========================
+   الهيدر
+========================= */
+
 .hero{
     position:relative;
-    overflow:hidden;
-    text-align:center;
+    background:
+        radial-gradient(circle at 15% 55%, rgba(62,151,238,.35), transparent 32%),
+        radial-gradient(circle at 90% 20%, rgba(0,73,145,.35), transparent 35%),
+        linear-gradient(145deg,#0874dc,#075eb8);
+    padding:28px 25px 48px;
     color:white;
-    padding:22px 18px 28px;
-    background:linear-gradient(145deg,#087ff5,#0052a8);
-    border-radius:0 0 38px 38px;
+    overflow:hidden;
 }
 
 .hero:before{
     content:"";
     position:absolute;
-    width:330px;
+    width:430px;
     height:180px;
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.06);
     border-radius:50%;
-    left:-80px;
-    top:40px;
-    transform:rotate(-18deg);
-}
-
-.hero:after{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:150px;
-    background:rgba(255,255,255,.07);
-    border-radius:50%;
-    right:-90px;
-    bottom:-35px;
+    top:100px;
+    right:-100px;
     transform:rotate(-15deg);
 }
 
 .badge{
     position:relative;
-    z-index:2;
     display:inline-block;
-    background:#ffd900;
+    background:linear-gradient(90deg,#ffbf00,#ff9f00);
     color:#111;
-    padding:7px 22px;
-    border-radius:30px;
-    font-weight:900;
-    font-size:16px;
-    margin-bottom:13px;
+    font-size:18px;
+    font-weight:bold;
+    padding:13px 28px;
+    border-radius:35px;
+    margin-bottom:45px;
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
 }
 
-.snow{
-    position:absolute;
-    z-index:2;
-    left:50%;
-    top:8px;
-    transform:translateX(-50%);
-    font-size:42px;
-    opacity:.95;
-}
-
-.logo{
+.hero h1{
     position:relative;
-    z-index:2;
-    margin-top:48px;
-    font-size:40px;
+    font-size:47px;
+    line-height:1.35;
     font-weight:900;
-    line-height:1.15;
+    color:#fff;
+    margin-bottom:18px;
 }
 
-.logo span{
-    display:block;
-    font-size:36px;
-    margin-top:3px;
-}
-
-.location{
+.hero .location{
     position:relative;
-    z-index:2;
-    color:#00d8ff;
-    font-size:19px;
-    font-weight:900;
-    margin-top:13px;
-}
-
-/* العرض */
-.offer{
-    background:linear-gradient(90deg,#ffd900,#ff8a00);
-    color:#111;
-    text-align:center;
-    padding:13px 10px 14px;
     font-size:25px;
-    font-weight:900;
-    line-height:1.45;
+    color:#61d5ff;
+    line-height:1.6;
 }
 
-/* الأقسام */
+/* =========================
+   عرض الصيف
+========================= */
+
+.offer{
+    background:linear-gradient(90deg,#ffb500,#ff9100);
+    padding:27px 20px;
+    color:#111;
+}
+
+.offer h2{
+    font-size:29px;
+    line-height:1.8;
+    font-weight:900;
+}
+
+/* =========================
+   الخدمات
+========================= */
+
 .section{
-    padding:22px 28px 0;
+    padding:45px 40px 35px;
+    background:#f7f9fb;
 }
 
-.title{
-    color:#0878ed;
-    font-size:30px;
+.section-title{
+    color:#0878dc;
+    font-size:29px;
     font-weight:900;
-    margin-bottom:13px;
-    display:flex;
-    align-items:center;
-    gap:8px;
+    text-align:right;
+    border-top:3px solid #d8e8f8;
+    padding-top:0;
+    margin-bottom:28px;
 }
 
-.title:after{
-    content:"";
-    height:3px;
-    flex:1;
-    background:#bde9ff;
-    border-radius:5px;
-}
-
-/* الخدمات */
-.services{
+.services-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:9px;
+    gap:20px;
 }
 
-.service{
-    min-height:120px;
-    background:linear-gradient(145deg,#e9f8ff,#d9f2fc);
-    border:2px solid #8edbff;
-    border-radius:17px;
+.service-card{
+    min-height:180px;
+    background:#dff2ff;
+    border:2px solid #c4e6fb;
+    border-radius:24px;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    padding:10px 5px;
-    font-size:19px;
-    font-weight:900;
-    color:#122c45;
+    padding:20px 10px;
+    box-shadow:0 4px 12px rgba(0,120,220,.08);
 }
 
 .service-icon{
-    font-size:34px;
-    margin-bottom:5px;
+    font-size:47px;
+    margin-bottom:14px;
 }
 
-/* لماذا نحن */
-.why-box{
-    background:linear-gradient(145deg,#087ff5,#0058aa);
-    border-radius:24px;
-    padding:16px 18px 20px;
-    margin-top:5px;
+.service-card h3{
+    font-size:23px;
+    line-height:1.45;
+    font-weight:900;
+}
+
+/* =========================
+   لماذا نحن
+========================= */
+
+.why{
+    padding:25px 40px 30px;
+    background:#f7f9fb;
 }
 
 .why-title{
-    text-align:center;
-    color:#fff;
-    font-size:31px;
+    color:#0878dc;
+    font-size:29px;
     font-weight:900;
-    margin-bottom:13px;
-    text-decoration:underline;
-    text-underline-offset:7px;
+    text-align:right;
+    border-top:3px solid #d8e8f8;
+    padding-top:0;
+    margin-bottom:30px;
 }
 
-.why-item{
-    background:#f7fcff;
-    border-radius:20px;
-    min-height:83px;
-    margin-bottom:9px;
-    display:flex;
-    align-items:center;
-    padding:9px 12px;
-    border-right:8px solid #087ff5;
-}
-
-.why-item:last-child{
-    margin-bottom:0;
+.why-card{
+    position:relative;
+    min-height:140px;
+    background:#fff;
+    border-radius:24px;
+    margin-bottom:20px;
+    padding:28px 115px 25px 25px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.035);
+    border-right:6px solid #0878ed;
 }
 
 .why-icon{
+    position:absolute;
+    right:28px;
+    top:50%;
+    transform:translateY(-50%);
     width:58px;
     height:58px;
-    min-width:58px;
-    border-radius:16px;
-    background:#087ff5;
+    border-radius:15px;
+    background:#0878ed;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:31px;
-    margin-left:12px;
 }
 
-.why-text{
-    text-align:right;
+.why-card h3{
+    font-size:25px;
+    line-height:1.5;
+    margin-bottom:5px;
+    font-weight:500;
 }
 
-.why-text strong{
-    display:block;
-    color:#0874e8;
-    font-size:19px;
+.why-card p{
+    color:#999;
+    font-size:20px;
+    line-height:1.5;
 }
 
-.why-text small{
-    color:#6b8298;
-    font-size:15px;
-}
+/* =========================
+   تواصل معنا
+========================= */
 
-/* التواصل */
 .contact{
-    margin:30px 28px 0;
-    background:linear-gradient(145deg,#0d304c,#082b47);
-    border-radius:28px;
-    text-align:center;
-    padding:25px 18px 28px;
-    color:#fff;
+    margin:25px 40px 30px;
+    background:#082a45;
+    border-radius:27px;
+    padding:36px 20px 38px;
+    color:white;
 }
 
 .contact-title{
-    color:#00bfff;
+    color:#20bfff;
+    font-size:26px;
+    margin-bottom:25px;
+}
+
+.phone-number{
+    font-size:40px;
+    font-weight:900;
+    letter-spacing:2px;
+    direction:ltr;
+}
+
+.contact-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    margin-top:32px;
+}
+
+.contact-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    min-height:78px;
+    border-radius:23px;
+    color:white;
+    text-decoration:none;
     font-size:25px;
     font-weight:900;
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
 }
 
-.phone{
-    direction:ltr;
-    font-size:39px;
-    font-weight:900;
-    margin:10px 0 18px;
-    letter-spacing:1px;
+.whatsapp-btn{
+    background:#20ce65;
 }
 
-.buttons{
-    display:flex;
-    gap:15px;
-}
-
-.btn{
-    flex:1;
-    text-decoration:none;
-    color:#fff;
-    padding:16px 8px;
-    border-radius:18px;
-    font-size:21px;
-    font-weight:900;
-}
-
-.whatsapp{
-    background:#20c968;
-}
-
-.call{
+.call-btn{
     background:#0878ed;
 }
 
-/* الفوتر */
+/* =========================
+   الفوتر
+========================= */
+
 .footer{
-    margin-top:20px;
-    border-top:1px solid #d6e8f2;
-    text-align:center;
-    padding:20px 10px 90px;
-    background:#f1f8fc;
-    font-size:16px;
-    color:#687f93;
+    background:#f7f9fb;
+    border-top:1px solid #dce5ed;
+    padding:24px 15px 28px;
+    color:#777;
+    font-size:18px;
+    line-height:2;
+}
+
+.footer p{
+    white-space:nowrap;
 }
 
 .footer a{
     color:#0878ed;
-    font-weight:900;
     text-decoration:none;
+    font-weight:900;
 }
 
-/* الأزرار العائمة */
-.floating{
+/* =========================
+   الأزرار العائمة
+========================= */
+
+.floating-buttons{
     position:fixed;
     left:18px;
-    bottom:18px;
-    z-index:9999;
+    bottom:25px;
+    z-index:99999;
     display:flex;
     flex-direction:column;
     gap:10px;
 }
 
 .float-btn{
-    width:66px;
-    height:66px;
+    width:68px;
+    height:68px;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
     text-decoration:none;
-    color:#fff;
-    font-size:34px;
-    box-shadow:0 5px 18px rgba(0,0,0,.25);
-    border:4px solid rgba(255,255,255,.75);
+    box-shadow:0 5px 16px rgba(0,0,0,.25);
+    animation:floatMove 2.4s ease-in-out infinite;
 }
 
-.float-wa{
+.float-btn svg{
+    width:39px;
+    height:39px;
+    display:block;
+}
+
+.float-whatsapp{
     background:#20c968;
 }
 
 .float-call{
     background:#0878ed;
+    animation-delay:.25s;
 }
 
-/* الموبايل */
-@media(max-width:500px){
+@keyframes floatMove{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-6px);
+    }
+}
 
-    .logo{
-        font-size:38px;
+/* =========================
+   الموبايل
+========================= */
+
+@media(max-width:600px){
+
+    .hero{
+        padding:25px 20px 40px;
     }
 
-    .logo span{
-        font-size:34px;
+    .badge{
+        font-size:16px;
+        padding:11px 22px;
+        margin-bottom:38px;
     }
 
-    .offer{
-        font-size:23px;
+    .hero h1{
+        font-size:42px;
+        line-height:1.35;
+    }
+
+    .hero .location{
+        font-size:22px;
+    }
+
+    .offer h2{
+        font-size:25px;
     }
 
     .section{
-        padding-left:22px;
-        padding-right:22px;
+        padding:38px 30px 30px;
     }
 
-    .service{
-        min-height:116px;
+    .section-title,
+    .why-title{
+        font-size:27px;
+    }
+
+    .services-grid{
+        gap:16px;
+    }
+
+    .service-card{
+        min-height:170px;
+        border-radius:22px;
+    }
+
+    .service-icon{
+        font-size:40px;
+    }
+
+    .service-card h3{
+        font-size:20px;
+    }
+
+    .why{
+        padding:20px 30px 25px;
+    }
+
+    .why-card{
+        min-height:135px;
+        padding-right:100px;
+    }
+
+    .why-card h3{
+        font-size:22px;
+    }
+
+    .why-card p{
         font-size:18px;
     }
 
     .contact{
-        margin-left:22px;
-        margin-right:22px;
+        margin:20px 30px 25px;
     }
 
-    .phone{
+    .phone-number{
         font-size:34px;
     }
 
-    .btn{
-        font-size:19px;
-    }
-}
-
-@media(max-width:370px){
-
-    .logo{
-        font-size:34px;
+    .contact-buttons{
+        gap:14px;
     }
 
-    .logo span{
-        font-size:30px;
-    }
-
-    .service{
-        font-size:16px;
-    }
-
-    .phone{
-        font-size:29px;
+    .contact-btn{
+        font-size:21px;
+        min-height:70px;
     }
 
     .float-btn{
-        width:58px;
-        height:58px;
-        font-size:29px;
+        width:68px;
+        height:68px;
+    }
+
+    .footer{
+        font-size:16px;
     }
 }
+
 </style>
 </head>
 
@@ -401,199 +448,259 @@ body{
 
 <div class="page">
 
-<!-- الهيدر -->
-<header class="hero">
+    <!-- الهيدر -->
+    <section class="hero">
 
-    <div class="snow">❄️</div>
-
-    <div class="badge">
-        🏆 خدمة موثوقة – متاح 24/7
-    </div>
-
-    <div class="logo">
-        جيزان الخدمة
-        <span>للمكيفات</span>
-    </div>
-
-    <div class="location">
-        📍 جيزان – المملكة العربية السعودية
-    </div>
-
-</header>
-
-
-<!-- العرض -->
-<div class="offer">
-    🔥 عروض الصيف | خصم 20% على<br>
-    الصيانة الشاملة
-</div>
-
-
-<!-- خدماتنا -->
-<section class="section">
-
-    <h2 class="title">
-        🔧 خدماتنا
-    </h2>
-
-    <div class="services">
-
-        <div class="service">
-            <div class="service-icon">🔧</div>
-            صيانة وإصلاح<br>المكيفات
+        <div class="badge">
+            🕐 خدمة موثوقة – متاح 24/7
         </div>
 
-        <div class="service">
-            <div class="service-icon">🚿</div>
-            تنظيف وغسيل<br>المكيفات
+        <h1>
+            جيزان الخدمة<br>
+            للمكيفات
+        </h1>
+
+        <div class="location">
+            📍 جيزان – المملكة العربية السعودية
         </div>
 
-        <div class="service">
-            <div class="service-icon">🌡️</div>
-            فحص وشحن<br>الغاز
+    </section>
+
+
+    <!-- عرض الصيف -->
+    <section class="offer">
+
+        <h2>
+            🔥 عروض الصيف | خصم 20% على<br>
+            الصيانة الشاملة
+        </h2>
+
+    </section>
+
+
+    <!-- خدماتنا -->
+    <section class="section">
+
+        <h2 class="section-title">
+            🔧 خدماتنا
+        </h2>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>
+                    صيانة وإصلاح<br>
+                    المكيفات
+                </h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚿</div>
+                <h3>
+                    تنظيف وغسيل<br>
+                    المكيفات
+                </h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔌</div>
+                <h3>
+                    تركيب وتوصيل<br>
+                    المكيفات
+                </h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌡️</div>
+                <h3>
+                    فحص وشحن<br>
+                    الغاز
+                </h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>
+                    خدمة منزلية<br>
+                    للأفراد والشركات
+                </h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>
+                    استبدال<br>
+                    القطع التالفة
+                </h3>
+            </div>
+
         </div>
 
-        <div class="service">
-            <div class="service-icon">🔌</div>
-            تركيب وتوصيل<br>المكيفات
-        </div>
-
-        <div class="service">
-            <div class="service-icon">🏠</div>
-            خدمة منزلية<br>للأفراد والشركات
-        </div>
-
-        <div class="service">
-            <div class="service-icon">🔄</div>
-            استبدال<br>القطع التالفة
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- لماذا نحن -->
-<section class="section">
+    <!-- لماذا نحن -->
+    <section class="why">
 
-    <div class="why-box">
+        <h2 class="why-title">
+            ⭐ لماذا نحن؟
+        </h2>
 
-        <div class="why-title">
-            لماذا نحن؟ ⭐
-        </div>
-
-        <div class="why-item">
+        <div class="why-card">
 
             <div class="why-icon">⚡</div>
 
-            <div class="why-text">
-                <strong>استجابة سريعة خلال ساعة</strong>
-                <small>نصلك في أسرع وقت ممكن</small>
-            </div>
+            <h3>
+                استجابة سريعة خلال ساعة
+            </h3>
+
+            <p>
+                نصلك في أسرع وقت ممكن
+            </p>
 
         </div>
 
-        <div class="why-item">
+
+        <div class="why-card">
 
             <div class="why-icon">🛡️</div>
 
-            <div class="why-text">
-                <strong>ضمان على جميع الأعمال</strong>
-                <small>ضمان 3 أشهر على الصيانة</small>
-            </div>
+            <h3>
+                ضمان على جميع الأعمال
+            </h3>
+
+            <p>
+                ضمان 3 أشهر على الصيانة
+            </p>
 
         </div>
 
-        <div class="why-item">
+
+        <div class="why-card">
 
             <div class="why-icon">💰</div>
 
-            <div class="why-text">
-                <strong>أسعار تنافسية ومناسبة</strong>
-                <small>لا رسوم خفية – شفافية كاملة</small>
-            </div>
+            <h3>
+                أسعار تنافسية ومناسبة
+            </h3>
+
+            <p>
+                لا رسوم خفية – شفافية كاملة
+            </p>
 
         </div>
 
-        <div class="why-item">
+
+        <div class="why-card">
 
             <div class="why-icon">👨‍🔧</div>
 
-            <div class="why-text">
-                <strong>فنيون محترفون ومعتمدون</strong>
-                <small>خبرة أكثر من 10 سنوات</small>
-            </div>
+            <h3>
+                فنيون محترفون ومعتمدون
+            </h3>
+
+            <p>
+                خبرة أكثر من 10 سنوات
+            </p>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- التواصل -->
-<section class="contact">
+    <!-- تواصل معنا -->
+    <section class="contact">
 
-    <div class="contact-title">
-        📞 تواصل معنا الآن
-    </div>
+        <div class="contact-title">
+            📞 تواصل معنا الآن
+        </div>
 
-    <div class="phone">
-        0554798320
-    </div>
+        <div class="phone-number">
+            0562643118
+        </div>
 
-    <div class="buttons">
+        <div class="contact-buttons">
 
-        <a class="btn whatsapp"
-           href="https://wa.me/966554798320"
-           target="_blank">
-            واتساب 💬
-        </a>
+            <a
+                class="contact-btn whatsapp-btn"
+                href="https://wa.me/966562643118"
+                target="_blank">
+                واتساب
+                <span>◔</span>
+            </a>
 
-        <a class="btn call"
-           href="tel:0554798320">
-            اتصل الآن 📞
-        </a>
+            <a
+                class="contact-btn call-btn"
+                href="tel:0562643118">
+                اتصل الآن
+                <span>📞</span>
+            </a>
 
-    </div>
+        </div>
 
-</section>
+    </section>
 
 
-<!-- الفوتر -->
-<footer class="footer">
+    <!-- الفوتر -->
+    <footer class="footer">
 
-    <p>
-        تم التصميم بواسطة:
-        <a href="https://wa.me/201095849594" target="_blank">
-            م.محمدابوجبل
-        </a>
-    </p>
+        <p>
+            تم التصميم بواسطة:
+            <a
+                href="https://wa.me/201095849594"
+                target="_blank">
+                م.محمدابوجبل
+            </a>
+        </p>
 
-    <p>
-        جميع الحقوق محفوظة © 2025 جيزان
-    </p>
+        <p>
+            جميع الحقوق محفوظة © 2025 جيزان
+        </p>
 
-</footer>
+    </footer>
 
 </div>
 
 
 <!-- الأزرار العائمة -->
-<div 
-<div class="floating">
+<div class="floating-buttons">
 
-    <a class="float-btn float-wa"
-       href="https://wa.me/966554798320"
-       target="_blank"
-       aria-label="واتساب">
-        ☎
+    <!-- واتساب -->
+    <a
+        class="float-btn float-whatsapp"
+        href="https://wa.me/966562643118"
+        target="_blank"
+        aria-label="واتساب">
+
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path
+                fill="#fff"
+                d="M16 3C8.82 3 3 8.82 3 16c0 2.29.6 4.53 1.73 6.5L3 29l6.67-1.7A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.55c-1.93 0-3.83-.52-5.49-1.5l-.39-.23-3.96 1.01 1.03-3.85-.25-.4A10.58 10.58 0 1 1 16 26.55z"/>
+
+            <path
+                fill="#fff"
+                d="M21.35 18.4c-.29-.15-1.7-.84-1.96-.93-.26-.1-.45-.15-.64.15-.19.29-.74.93-.91 1.12-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.13-.23-.56-.47-.49-.64-.5h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43 0 1.43 1.02 2.81 1.17 3 .14.19 2 3.05 4.84 4.28.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.12.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34z"/>
+        </svg>
+
     </a>
 
-    <a class="float-btn float-call"
-       href="tel:0554798320"
-       aria-label="اتصال">
-        ☎
+
+    <!-- اتصال -->
+    <a
+        class="float-btn float-call"
+        href="tel:0562643118"
+        aria-label="اتصال">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+                fill="#fff"
+                d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+
     </a>
 
 </div>
+
+</body>
+</html>
